@@ -1,0 +1,11 @@
+﻿using Nume_Pren_Lab2.Models;
+
+namespace Lab2.Models
+{
+    public class BookData
+    {
+        public IEnumerable<Book> Books { get; set; }
+        public IEnumerable<Category> Categories { get; set; }
+        public IEnumerable<BookCategory> BookCategories { get; set; }
+    }
+}
