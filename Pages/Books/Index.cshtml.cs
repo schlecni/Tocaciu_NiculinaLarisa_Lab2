@@ -1,12 +1,13 @@
-﻿using System;
+﻿using Lab2.Data;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.RazorPages;
+using Microsoft.Data.SqlClient;
+using Microsoft.EntityFrameworkCore;
+using Nume_Pren_Lab2.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.RazorPages;
-using Microsoft.EntityFrameworkCore;
-using Lab2.Data;
-using Nume_Pren_Lab2.Models;
 
 namespace Lab2.Pages.Books
 {
@@ -21,10 +22,32 @@ namespace Lab2.Pages.Books
 
         public IList<Book> Book { get;set; } = default!;
 
-        public async Task OnGetAsync()
+        public string TitleSort { get; set; }
+        public string AuthorSort { get; set; }
+
+        public async Task OnGetAsync(string sortOrder)
         {
-            Book = await _context.Book
+            TitleSort = String.IsNullOrEmpty(sortOrder) ? "title_desc" : "";
+            AuthorSort = sortOrder == "author" ? "author_desc" : "author";
+
+            switch (sortOrder)
+            {
+                case "title_desc":
+                    BookD.Books = BookD.Books.OrderByDescending(s => s.Title);
+                    break;
+                case "author_desc":
+                    BookD.Books = BookD.Books.OrderByDescending(s => s.Author.FullName);
+                    break;
+                case "author":
+                    BookD.Books = BookD.Books.OrderBy(s => s.Author.FullName);
+                    break;
+                default:
+                    BookD.Books = BookD.Books.OrderBy(s => s.Title);
+                    break;
+
+                    Book = await _context.Book
                 .Include(b => b.Publisher)
+                .Include(b => b.Author)
                 .ToListAsync();
 
         }
