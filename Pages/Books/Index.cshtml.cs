@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -21,12 +21,32 @@ namespace Tocaciu_NiculinaLarisa_Lab2.Pages.Books
 
         public IList<Book> Book { get;set; } = default!;
 
-        public async Task OnGetAsync()
+        public BookData BookD { get; set; }
+        public int BookID { get; set; }
+        public int CategoryID { get; set; }
+
+
+        public async Task OnGetAsync(int? id, int? categoryID)
         {
-            Book = await _context.Book
-                .Include(b => b.Publisher) // se includ si datele despre Publisher
-                .Include(b => b.Author)    // se includ si datele despre Author
-                .ToListAsync();
+            BookD = new BookData();
+
+            BookD.Books = await _context.Book
+                  .Include(b => b.Publisher)
+                  .Include(b => b.Author)
+                  .Include(b => b.BookCategories)
+                  .ThenInclude(b => b.Category)
+                  .AsNoTracking()
+                  .OrderBy(b => b.Title)
+                  .ToListAsync();
+
+            if (id != null)
+            {
+                BookID = id.Value;
+                Book book = BookD.Books
+                    .Where(i => i.ID == id.Value).Single();
+                BookD.Categories = book.BookCategories.Select(s => s.Category);
+            }
+
         }
     }
 }
