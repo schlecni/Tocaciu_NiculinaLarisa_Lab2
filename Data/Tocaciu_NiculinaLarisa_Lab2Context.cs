@@ -22,4 +22,3 @@ namespace Tocaciu_NiculinaLarisa_Lab2.Data
         public DbSet<Tocaciu_NiculinaLarisa_Lab2.Models.Borrowing> Borrowing { get; set; } = default!;
     }
 }
-

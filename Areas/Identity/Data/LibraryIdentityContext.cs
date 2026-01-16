@@ -19,4 +19,3 @@ public class LibraryIdentityContext : IdentityDbContext<IdentityUser>
         // Add your customizations after calling base.OnModelCreating(builder);
     }
 }
-

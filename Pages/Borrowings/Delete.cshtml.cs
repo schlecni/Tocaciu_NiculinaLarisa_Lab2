@@ -67,4 +67,3 @@ namespace Tocaciu_NiculinaLarisa_Lab2.Pages.Borrowings
         }
     }
 }
-

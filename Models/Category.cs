@@ -9,4 +9,3 @@ namespace Tocaciu_NiculinaLarisa_Lab2.Models
         public ICollection<BookCategory>? BookCategories { get; set; }
     }
 }
-

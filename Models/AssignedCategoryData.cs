@@ -7,4 +7,3 @@ namespace Tocaciu_NiculinaLarisa_Lab2.Models
         public bool Assigned { get; set; }
     }
 }
-
