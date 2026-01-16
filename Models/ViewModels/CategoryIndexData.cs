@@ -6,3 +6,4 @@ namespace Tocaciu_NiculinaLarisa_Lab2.Models.ViewModels
         public IEnumerable<Book> Books { get; set; }
     }
 }
+

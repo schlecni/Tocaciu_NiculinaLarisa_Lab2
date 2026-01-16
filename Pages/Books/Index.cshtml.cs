@@ -48,12 +48,13 @@ namespace Tocaciu_NiculinaLarisa_Lab2.Pages.Books
 
             if (!String.IsNullOrEmpty(searchString))
             {
-                BookD.Books = BookD.Books.Where(s => s.Author.FirstName.Contains(searchString)
-
-                                               || s.Author.LastName.Contains(searchString)
-                                               || s.Title.Contains(searchString));
-
-                if (id != null)
+                BookD.Books = BookD.Books.Where(s =>
+                                   (s.Title != null && s.Title.ToLower().Contains(searchString.ToLower())) ||
+                                   (s.Author != null && s.Author.FirstName != null && s.Author.FirstName.ToLower().Contains(searchString.ToLower())) ||
+                                   (s.Author != null && s.Author.LastName != null && s.Author.LastName.ToLower().Contains(searchString.ToLower())) ||
+                                   (s.Author != null && s.Author.FullName != null && s.Author.FullName.ToLower().Contains(searchString.ToLower())));
+            }
+            if (id != null)
                 {
                     BookID = id.Value;
                     Book book = BookD.Books
@@ -81,4 +82,5 @@ namespace Tocaciu_NiculinaLarisa_Lab2.Pages.Books
             }
         }
     }
-}
+
+

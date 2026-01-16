@@ -18,9 +18,11 @@ namespace Tocaciu_NiculinaLarisa_Lab2.Models
         public Publisher? Publisher { get; set; } // proprietate de navigare
         public int? AuthorID { get; set; } // cheie straina
         public Author? Author { get; set; }   // proprietate de navigare
+        public ICollection<Borrowing>? Borrowings { get; set; }
         public ICollection<BookCategory>? BookCategories { get; set; }
     }
 
 
 }
+
 

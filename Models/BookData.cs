@@ -7,3 +7,4 @@ namespace Tocaciu_NiculinaLarisa_Lab2.Models
         public IEnumerable<BookCategory> BookCategories { get; set; }
     }
 }
+
