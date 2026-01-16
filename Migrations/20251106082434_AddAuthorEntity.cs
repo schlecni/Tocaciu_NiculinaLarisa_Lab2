@@ -1,4 +1,4 @@
-﻿using Microsoft.EntityFrameworkCore.Migrations;
+using Microsoft.EntityFrameworkCore.Migrations;
 
 #nullable disable
 
@@ -74,4 +74,3 @@ namespace Tocaciu_NiculinaLarisa_Lab2.Migrations
         }
     }
 }
-

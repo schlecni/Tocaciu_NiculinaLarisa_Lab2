@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -75,4 +75,3 @@ namespace Tocaciu_NiculinaLarisa_Lab2.Pages.Categories
         }
     }
 }
-

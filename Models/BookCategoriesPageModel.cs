@@ -1,4 +1,4 @@
-﻿using Microsoft.AspNetCore.Mvc.RazorPages;
+using Microsoft.AspNetCore.Mvc.RazorPages;
 using Tocaciu_NiculinaLarisa_Lab2.Data;
 
 namespace Tocaciu_NiculinaLarisa_Lab2.Models
@@ -66,5 +66,4 @@ namespace Tocaciu_NiculinaLarisa_Lab2.Models
         }
     }
 }
-
 

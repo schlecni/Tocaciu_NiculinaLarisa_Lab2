@@ -1,4 +1,6 @@
-﻿namespace Tocaciu_NiculinaLarisa_Lab2.Models
+using System.ComponentModel.DataAnnotations;
+
+namespace Tocaciu_NiculinaLarisa_Lab2.Models
 {
     public class Author
     {
@@ -6,17 +8,18 @@
         public string FirstName { get; set; }
         public string LastName { get; set; }
 
-        // Proprietate de navigare (Un Autor -> Multe Cărți)
-        public ICollection<Book>? Books { get; set; }
-        public string FullName // proprietate read-only pentru a obține numele complet al autorului
+        [Display(Name = "Full Name")]
+
+        // Proprietate de navigare (Un Autor -> Multe Car?i)
+       
+        public string FullName // proprietate read-only pentru a ob?ine numele complet al autorului
         {
             get
             {
                 return LastName + " " + FirstName;
             }
         }
-
+        public ICollection<Book>? Books { get; set; }
 
     }
 }
-

@@ -1,4 +1,4 @@
-﻿namespace Tocaciu_NiculinaLarisa_Lab2.Models
+namespace Tocaciu_NiculinaLarisa_Lab2.Models
 {
     public class BookCategory
     {
@@ -13,4 +13,3 @@
         public Category Category { get; set; }
     }
 }
-

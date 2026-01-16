@@ -3,7 +3,6 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
-using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Tocaciu_NiculinaLarisa_Lab2.Data;
 
@@ -12,11 +11,9 @@ using Tocaciu_NiculinaLarisa_Lab2.Data;
 namespace Tocaciu_NiculinaLarisa_Lab2.Migrations
 {
     [DbContext(typeof(Tocaciu_NiculinaLarisa_Lab2Context))]
-    [Migration("20251116083620_BookCategory")]
-    partial class BookCategory
+    partial class Tocaciu_NiculinaLarisa_Lab2ContextModelSnapshot : ModelSnapshot
     {
-        /// <inheritdoc />
-        protected override void BuildTargetModel(ModelBuilder modelBuilder)
+        protected override void BuildModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

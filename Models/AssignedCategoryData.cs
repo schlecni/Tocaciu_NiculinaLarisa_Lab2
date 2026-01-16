@@ -1,4 +1,4 @@
-﻿namespace Tocaciu_NiculinaLarisa_Lab2.Models
+namespace Tocaciu_NiculinaLarisa_Lab2.Models
 {
     public class AssignedCategoryData
     {
@@ -7,4 +7,3 @@
         public bool Assigned { get; set; }
     }
 }
-

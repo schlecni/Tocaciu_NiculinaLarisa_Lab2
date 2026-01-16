@@ -1,4 +1,4 @@
-﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using Tocaciu_NiculinaLarisa_Lab2.Data;
 var builder = WebApplication.CreateBuilder(args);
@@ -28,4 +28,3 @@ app.UseAuthorization();
 app.MapRazorPages();
 
 app.Run();
-

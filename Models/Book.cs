@@ -1,4 +1,4 @@
-﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Security.Policy;
 
@@ -23,5 +23,4 @@ namespace Tocaciu_NiculinaLarisa_Lab2.Models
 
 
 }
-
 
